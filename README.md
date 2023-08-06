@@ -1,2 +1,2 @@
 # Javascript
-Learn javascript 
+Learn javascript with Udacity
