@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learn JavaScript</title>
+        <meta charset="utf-8">
+        <meta name="decription" content="learn JavaScript">
+        <meta name="keywords" content="learn, JavaScript">
+        <meta name="author" content="Jean Paul Tabone">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //Number datatype
+            var x = 3;
+            document.write("x = 3, The result is " + x);
+            document.write("<br>");
+            //Arithmetic Operations
+            var x = 3;
+            var y = 2.1;
+            var z = 3 + 2.1;
+            document.write("3 + 2.1 = " + z);
+            document.write("<br>");
+            var x = 3;
+            var y = 2.1;
+            var z = x - y;
+            document.write("3 - 2.1 = " + z);
+            document.write("<br>");
+            var x = 6;
+            var y = 2;
+            var z = x / y;
+            document.write("6 / 2 = " + z);
+            document.write("<br>");
+            var x = 3;
+            var y = 1;
+            var z = x % y;
+            document.write(" 3 remainder 1 = " + z);
+            document.write("<br>");
+            //Comparing Numbers
+            var x = 5;
+            var y = 10;
+            var z = x > y;
+            document.write("5 > 10 = " + z);
+            document.write("<br>");
+            var x = 5;
+            var y = 10;
+            var z = x < y;
+            document.write("5 < 10 = " + z);
+            document.write("<br>");
+            var x = 5;
+            var y = 10;
+            var z = x == y;
+            document.write("5 == 10 = " + z);
+            document.write ("<br>");
+            var x = 5;
+            var y = 10;
+            var z = x != y;
+            document.write("5 != 10 = " + z);
+            document.write ("<br>");
+            /*This is
+            a multiline comment*/
+            //String datatype
+            var x = "Hello Friend";
+            document.write(x);
+            document.write("<br>");
+            //string concatenation 1
+            var x = "Hello";
+            document.write(x + " friend");
+            document.write("<br>");
+            //string concatenation 2
+            var x = "Jean Paul";
+            var y = "home";
+            document.write("Dear " + x + " welcome " + y + " my dear friend!!");
+            document.write("<br>");
+            //short hand to add to a string
+            var x = "Hello";
+            x += " World";
+            document.write(x);
+            document.write("<br>");
+            //string Index
+            var x = "Hello";
+            document.write(x[0]);
+            document.write("<br>");
+            //Escaping Characters
+            var x = "Hello World,\"please speak to me\"";
+            document.write(x);
+            document.write("<br>");
+            var x = "Hello\n\tWorld";
+            document.write(x);
+            document.write("<br>");
+            //strict equality
+            var x = "1";
+            var y = 1;
+            var z = x === y;
+            document.write(z);
+            document.write("<br>");
+            //undefined and null 
+            var x;
+            document.write(x);
+            document.write("<br>");
+            var x = null;
+            document.write(x);
+            document.write("<br>");
+            // if...else statement
+            var price = 15.00;
+            var money = 20.00;
+            if (money >= price){
+                document.write("buy the hammer");
+            }else{
+                document.write("don't buy the hammer")
+            } document.write("<br>");
+            var a = 1;
+            var b = 2;
+            if(a > b){
+                document.write("a is greater than b");
+            }else{
+                document.write("a is less than or equal to b");
+            } document.write("<br>");
+            //else if statement
+            var weather ="snow";
+            if(weather === "snow"){
+                document.write("Bring a coat");
+            } else if(weather === "rain"){
+                document.write("Bring a rain jacket")
+            }else{
+                document.write("Wear what you have on")
+            } document.write("<br>");
+            //logical operators
+            var colt = "not busy";
+            var weather = "nice";
+            if (colt === "not busy" && weather === "nice") {
+                document.write("go to the park");
+            }document.write("<br>");
+            //falsy values
+            if(""){
+                document.write("the value is truthy");
+            }else{
+                document.write("the value is falsy");
+                }document.write("<br>");
+            //truthy values
+            if(1){
+                document.write("the value is truthy");
+            }else{
+                document.write("the value is falsy");
+            } document.write("<br>");
+            //ternary operator
+            var isGoing = true;
+            var color = isGoing ? "green" : "red";
+            document.write(color);
+            document.write("<br>");
+            //switch statement
+            var option = "";
+            var winner = 3;
+            switch (winner) {
+                case 1:
+                    option += document.write("option 1");
+                    break;
+                case 2:
+                    option += document.write("option 2");
+                    break;
+                case 3:
+                    option += document.write("option 3");
+                default:
+                    option = document.write(" that is correct");
+            } document.write("<br>");
+            //While Loops
+            var start = 0;
+            while (start < 10){
+                document.write(start);
+                document.write("<br>");
+                start = start + 1;
+            } document.write("<br>");
+            //For loops
+            for (var start = 0; start < 10; start++){
+                document.write("The value of start is: " + start);
+                document.write("<br>");
+            }document.write("<br>");
+            //Nested For loops
+            for(var x = 0; x < 5; x++){
+                for(var y = 0; y < 3; y++){
+                    document.write(x + "," + y);
+                    document.write("<br>");
+                } document.write("<br>");
+            }
+            //Functions
+            function findAverage(x, y){ //paramenters
+                var answer = (x + y) / 2;
+                return answer;
+            }
+            var avg = findAverage(5, 9); //arguments
+            document.write("The average of x and y is: " + avg);
+            document.write("<br>");
+            //Function with a loop
+            var sound = "";
+            function laugh(num){
+                for(var i = 0; i < num; i++){
+                    sound = sound + "ha";
+                }
+                sound = sound + "!";
+                return sound;
+            }
+            document.write(laugh(3));
+            document.write("<br>");
+            //Function with a loop and if statement
+            function isPrime(integer){
+                for(var i = 0; i < integer; i++){
+                    if (integer % i === 0){
+                        document.write(integer + " is divisible by " + x);
+                        return false;
+                    }
+                    return true;
+                    document.write(integer + " is not divisible by " + x);
+                }
+            }
+            document.write(isPrime(10));
+            document.write("<br>");
+            //arrays
+            var donuts = ["glazed", "chocolate", "cinnamon"];
+            //change the value of an element
+            donuts[0] = "glazed cruller"
+            document.write(donuts[0]);
+            document.write("<br>");
+            //for loop, if statement, length property
+            var prices = [1.23, 48.11, 90.11, 8.50, 9.99, 1.00, 1.10, 67.00];
+            for (var index = 0; index<prices.length; index++){
+                if (index === 0) {
+                    prices[index] = 11;
+                }
+                else if (index === 2){
+                    prices[index] = 33;
+                }
+                else if(index === 6){
+                    prices[index] = 77;
+                }
+            }
+            document.write(prices);
+            document.write("<br>");
+            // Push array
+            var donuts = ["glazed", "chocolate", "cinnamon"];
+            donuts.push("powdered");
+            document.write(donuts);
+            document.write("<br>")
+            //Pop array
+            var donuts = ["glazed", "chocolate", "cinnamon"];
+            donuts.pop("cinnamon");
+            document.write(donuts);
+            document.write("<br>");
+            //Splice array
+            var donuts = ["glazed", "chocolate", "cinnamon"];
+            donuts.splice(1,1, "chocolate cruller" , "creme de leche");
+            document.write(donuts);
+            document.write("<br>");
+            //For Each loop
+            var donuts = ["glazed", "chocolate", "cinnamon"];
+            donuts.forEach(function(donut) {
+                donut += " hole ";
+                donut = donut.toUpperCase();
+                document.write(donut);
+            });
+            document.write("<br>");
+            //map
+            var donuts = ["glazed", "chocolate", "cinnamon"];
+            var improvedDonuts = donuts.map(function(donut){
+                donut += " holy ";
+                donut = donut.toUpperCase();
+                document.write(donut);
+            });
+            document.write("<br>");
+            // 2D array (array in arrays)
+            var donuts = [
+                ["glazed", "chocolate", "cinnamon"],
+                ["powdered", "sprinkled", "glazed cruller"],
+                ["cruller", "boston creme", "creme de leche"]
+            ];
+            for(var row = 0; row < donuts.length; row++){
+                for(var column = 0; column < donuts[row].length; column++){
+                    document.write(donuts[row][column]);
+                    document.write("<br>");
+                }
+            }
+            //object
+            var sister = {
+                name: "Stefania",
+                age: 37,
+                parents: ["Tony","Maria"],
+                siblings: ["Marco","Jean Paul"],
+                favoriteColor: "purple",
+                pets: false,
+                paintPicture: function() {
+                    return "Sarah paints!";
+                }
+            };
+            document.write(sister.parents);
+            document.write("<br>");
+            document.write(sister.paintPicture());
+            document.write("<br>");
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

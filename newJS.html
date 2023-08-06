@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learn JavaScript</title>
+        <meta charset="utf-8">
+        <meta name="decription" content="learn JavaScript">
+        <meta name="keywords" content="learn, JavaScript">
+        <meta name="author" content="Jean Paul Tabone">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //using const and let (change in variable)
+            const characterLimit = 255;
+            const post = "#DeepLearning transforms everything from self-driving cars to language translations.";
+            function displayPost(){
+                for (let i = 0; i < post.length; i++){
+                    document.write(post[i].slice(0,characterLimit));
+                }
+            }
+           displayPost();
+            document.write("<br>");
+            //concatination single line
+            const myName = "Jean Paul";
+            const greeting = `Hello ${myName}. Welcome to JS`;
+            document.write(greeting);
+            document.write("<br>");
+            //concatination multiline
+            const note = `Hello,
+            <br>
+            Welcome to our workshop ${myName}`;
+            document.write(note);
+            document.write("<br>");
+            //Destructing from an array
+            const point = [10, 25, -34];
+            const [x, y, z] = point;
+            document.write(x, y, z);
+            document.write("<br>");
+            //Destructing from an object
+            const gemstone = {
+                type: "quartz",
+                color: "rose",
+                carat: 21.29
+            }
+            const {type, color, carat} = gemstone;
+            document.write(type, color, carat);
+            document.write("<br>");
+            //For...of Loop
+            const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            for (const digit of digits){
+                document.write(digit);
+            }
+            document.write("<br>");
+            //spread operator - combinig arrays
+            const fruits = ["apples", "bananas", "pears"];
+            const vegetables = ["corn", "potatoes", "carrots"];
+            const produce = [...fruits, ...vegetables];
+            document.write(produce);
+            document.write("<br>");
+            //rest operator - accepts an indefinite number of arguments
+            function sum(...theArgs) {
+                let total = 0;
+                for (const arg of theArgs) {
+                    total += arg;
+                }
+                return total;
+            }
+            document.write(sum(1, 2, 3));
+            // Expected output: 6
+            document.write(sum(1, 2, 3, 4));
+            // Expected output: 10
+            document.write("<br>");
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to</h1>
+        <h2>Class List</h2>
+        <h3>Click Me!!</h3>
+        <p id = "remove">Hello JP</p>
+        <p id = "bongu"></p>
+        <p id = "hello" style="color:red;"></p>
+        <p class = "Welcome"></p>
+        <h2 id="mainHeading">Bongu</h2>
+        <a href="http://www.google.com">Google Site</a>
+        <script>
+            //output
+            document.getElementById("hello").innerHTML = "Hello Jean Paul";
+            let name = document.getElementsByClassName("Welcome").innerHTML = "Hello Dorianne";
+            document.write(name);
+            let tag = document.getElementsByTagName("p").innerHTML = "Welcome Joe";
+            document.write(tag);
+            //returns a single element.Selects the tag/ div or class
+            const pTag = document.querySelector("#bongu");
+            pTag.textContent = "Hello Tony"; 
+            //returns a list of elements
+            document.querySelectorAll(".articles p");
+            //adding content at the end of a heading
+            const newSpan = document.createElement("span");
+            newSpan.textContent = " Javascript";
+            //inserting text
+            const heading = document.querySelector("h1");
+            heading.appendChild(newSpan);
+            const myPara = document.createElement("p");
+            myPara.textContent = "I was created using Javascript";
+            document.body.appendChild(myPara);
+            //exercise
+            const mainHeading = document.querySelector("#mainHeading");
+            const excitedText = document.createElement("span");
+            excitedText.textContent = "!!!";
+            mainHeading.appendChild(excitedText);
+            //HTML in other locations
+            const mainHead = document.querySelector("#mainHeading");
+            const textToAdd = '<h3>Sub Heading</h3>';
+            mainHead.insertAdjacentHTML('afterend',textToAdd);
+            //Removing a child element
+            const remove = document.querySelector("#remove");
+            remove.remove();
+            //creating page styles - one style
+            const myHeading = document.querySelector("h1");
+            myHeading.style.color = "blue";
+            myHeading.style.width = "50%";
+            //creating page styles - multiple styles
+            myHeading.style.cssText = "color: red; text-decoration: underline";
+            //classlist property .add(), .remove(), .toggle(), .contains
+            let FirstHeading = document.querySelector("h2")
+            FirstHeading.classList.add("headingClass");
+            FirstHeading = document.querySelector(".headingClass");
+            FirstHeading.style.fontSize = "100px";
+            // event listener
+            const clickHead = document.querySelector("h3");
+            clickHead.addEventListener('click', function() {
+                alert("Heading was clicked!!");
+                clickHead.style.backgroundColor = "red";
+            });
+            //Event Object
+            const items = document.addEventListener("click", function(event){
+                console.log(event);
+            });
+            //preventing default action
+            const links = document.querySelector('a');
+            links.addEventListener('click', function(event){
+                event.preventDefault();
+                alert("we didn't navigate to Google site");
+            });
+            //The content loaded event
+            document.addEventListener('DOMContentLoaded',function(){
+                console.log("The DOM is ready to be interacted with");
+            });
+            // increase performance
+            const t0 = performance.now();
+            const fragment = document.createDocumentFragment();
+            //const myCustomDiv = document.createElement('div');
+            for (let i = 1; i <= 200; i++) {
+            const newElement = document.createElement('p');
+            newElement.innerText = 'This is paragraph number ' + i;
+            myCustomDiv.appendChild(newElement);
+            }
+            document.body.appendChild(fragment);
+            //document.body.appendChild(myCustomDiv);
+            const t1 = performance.now();
+            console.log("This code took " + (t1 - t0) + " milliseconds");
+        </script>
+    </body>
+</html>
